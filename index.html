@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título y Metadatos para SEO y Redes Sociales -->
+    <title>ICAA Indumentaria | Seguridad y Orgullo desde Jáchal</title>
+    <meta name="description"
+        content="Confeccionamos indumentaria técnica de alta calidad para minería, construcción y agroindustria. Un proyecto con impacto local y compromiso social fundado en Jáchal.">
+
+    <!-- Open Graph para compartir en redes -->
+    <meta property="og:title" content="ICAA Indumentaria | Seguridad y Orgullo desde Jáchal">
+    <meta property="og:description"
+        content="Ropa de trabajo que ofrece seguridad, identidad y confort, impulsando el desarrollo de nuestra comunidad.">
+    <meta property="og:image" content="https://www.icaa.com.ar/og-image.jpg"> <!-- URL de la imagen para compartir -->
+    <meta property="og:url" content="https://www.icaa.com.ar/">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon (icono en la pestaña del navegador) -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Librería de Animaciones (Animate On Scroll) - La usaremos con JS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Google Fonts: Inter para Títulos y Montserrat para Texto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&family=Montserrat:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Hoja de Estilos Personalizada (La crearemos después) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =================================================================
+    BARRA DE NAVEGACIÓN (HEADER)
+    Diseñada para ser transparente al inicio y cambiar con el scroll.
+    ================================================================== -->
+    <header>
+        <nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <!-- El logo se cambiará con JS/CSS al hacer scroll -->
+                    <img src="./img/logoh.png" alt="Logo ICAA Indumentaria" height="100">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-center">
+                        <li class="nav-item"><a class="nav-link" href="#nosotras">Nosotras</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#proceso">Nuestro Proceso</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#soluciones">Soluciones</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-brand-outline ms-lg-3"
+                                href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- =================================================================
+SECCIÓN HERO (PORTADA)
+================================================================== -->
+        <section id="hero">
+            <!-- Este div ahora está vacío. El CSS se encargará de poner la montaña. -->
+            <div class="hero-image-bg"></div>
+
+            <div class="hero-content d-flex align-items-center">
+                <div class="container text-center">
+                    <h1 data-aos="fade-up">Manos que transforman. Ropa que protege.</h1>
+                    <p class="lead" data-aos="fade-up" data-aos-delay="200">Desde el corazón de Jáchal, creamos
+                        indumentaria técnica que es sinónimo de orgullo, seguridad y futuro.</p>
+                    <a href="#nosotras" class="scroll-down-indicator" aria-label="Ir a la siguiente sección">
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!--Aquí conectamos con el lado humano. La foto de Nancy y su equipo
+        será el centro de atención. 
+        ================================================================== -->
+        <section id="nosotras" class="py-5">
+            <div class="container">
+                <div class="row gx-5 align-items-center">
+                    <div class="col-lg-6" data-aos="fade-right">
+                        <!-- Placeholder para una foto inspiradora del equipo -->
+                        <img src="./img/equipo.jpg" class="img-fluid rounded shadow-lg"
+                            alt="Nancy Heredia y el equipo de ICAA Indumentaria en su taller de Jáchal">
+                    </div>
+                    <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+                        <h2 class="display-5">Un sueño personal,<br>un proyecto colectivo.</h2>
+                        <p class="text-secondary">Fundada por Nancy Heredia, ICAA nació como una visión para generar
+                            valor en Jáchal. Hoy, somos un equipo comprometido que cree en el poder de emprender desde
+                            el interior profundo para construir un país más justo.</p>
+                        <div id="impact-counters" class="d-flex justify-content-between mt-4">
+                            <div class="counter-item">
+                                <span class="counter-number" data-target="9">0</span><span>+</span>
+                                <p>Colaboradoras locales</p>
+                            </div>
+                            <div class="counter-item">
+                                <span class="counter-number" data-target="100">0</span><span>%</span>
+                                <p>Compromiso Social</p>
+                            </div>
+                            <div class="counter-item">
+                                <span class="counter-number" data-target="3">0</span>
+                                <p>Industrias Clave</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================
+        SECCIÓN "PROCESO" (NUESTRA FILOSOFÍA)
+        Una sección dinámica para mostrar los pilares de la marca.
+        Ideal para animaciones con JS.
+        ================================================================== -->
+        <section id="proceso" class="py-5 bg-light">
+            <div class="container text-center">
+                <h2 class="display-6" data-aos="fade-up">No solo diseñamos ropa de trabajo.</h2>
+                <p class="lead text-secondary mb-5" data-aos="fade-up" data-aos-delay="100">Acompañamos a quienes
+                    construyen el país.</p>
+                <div class="row g-4">
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="process-card">
+                            <div class="process-icon"><!-- Placeholder para ícono de seguridad --></div>
+                            <h4>Seguridad Intransigente</h4>
+                            <p>Cada costura, tela y diseño están pensados para brindar la máxima protección y confianza
+                                al trabajador.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="process-card">
+                            <div class="process-icon"><!-- Placeholder para ícono de identidad --></div>
+                            <h4>Identidad que Inspira</h4>
+                            <p>Personalizamos cada prenda para que refleje los valores y el orgullo de pertenencia de
+                                cada empresa.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                        <div class="process-card">
+                            <div class="process-icon"><!-- Placeholder para ícono de confort --></div>
+                            <h4>Confort para la Jornada</h4>
+                            <p>Creemos que la comodidad es clave para la productividad y el bienestar. Creamos ropa para
+                                vivirla.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================
+<!=================================================================
+SECCIÓN ÉPICA: MINERÍA DE ALTA MONTAÑA
+Una experiencia inmersiva para el cliente clave.
+================================================================== -->
+        <section id="mineria-hero">
+            <!-- Este div está limpio. El CSS se encargará de poner la imagen. -->
+            <div class="parallax-bg"></div>
+
+            <!-- La línea animada de "escaneo" -->
+            <div class="scan-line"></div>
+
+            <div class="container hud-container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="hud-content" data-aos="fade-right">
+                            <h2 class="display-4">Soluciones de Vanguardia para la Minería de Alta Montaña</h2>
+                            <p class="lead">Entendemos los desafíos de operar en las condiciones más extremas. Nuestra
+                                indumentaria técnica está diseñada para superar cada prueba, garantizando la máxima
+                                seguridad y rendimiento para su equipo.</p>
+
+                            <div class="features-grid">
+                                <div class="feature-item">
+                                    <span class="feature-title">Resistencia Extrema</span>
+                                    <p>Tejidos anti-desgarro y costuras reforzadas para soportar la abrasión.</p>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-title">Visibilidad Certificada</span>
+                                    <p>Cintas reflectivas de alta intensidad para operaciones nocturnas y de baja luz.
+                                    </p>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-title">Confort en Altura</span>
+                                    <p>Aislamiento térmico inteligente y transpirabilidad para climas de montaña.</p>
+                                </div>
+                            </div>
+
+                            <a href="#contacto" class="btn btn-brand-primary btn-lg mt-4">
+                                Constáctenos
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================
+SECCIÓN "SOLUCIONES" 2.0 (CON LAYOUT 2x2 E INTERACCIÓN MEJORADA)
+================================================================== -->
+        <section id="soluciones" class="py-5">
+            <div class="container">
+                <div class="text-center mb-5" data-aos="fade-up">
+                    <h2 class="display-5">Soluciones Integrales</h2>
+                    <p class="lead text-secondary">Desde la protección personal hasta la identidad corporativa y
+                        escolar.</p>
+                </div>
+                <div class="row g-4 g-lg-5">
+                    <!-- Tarjeta 1: Fuerza de Seguridad -->
+                    <div class="col-lg-6 col-md-6" data-aos="zoom-in-up">
+                        <a href="#" class="solution-card-v2" style="background-image: url('./img/fuerzalaboral.webp');">
+                            <div class="solution-card-content">
+                                <h3>Fuerza de Seguridad</h3>
+                                <p>Uniformes tácticos que garantizan resistencia y funcionalidad en cada misión.</p>
+                                <span class="arrow-icon">→</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Tarjeta 2: Uniformes Escolares -->
+                    <div class="col-lg-6 col-md-6" data-aos="zoom-in-up" data-aos-delay="100">
+                        <a href="#" class="solution-card-v2"
+                            style="background-image: url('./img/uniformesescolares.png');">
+                            <div class="solution-card-content">
+                                <h3>Uniformes Escolares</h3>
+                                <p>Diseño, comodidad y durabilidad para acompañar el crecimiento y el aprendizaje.</p>
+                                <span class="arrow-icon">→</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Tarjeta 3: Indumentaria Laboral -->
+                    <div class="col-lg-6 col-md-6" data-aos="zoom-in-up" data-aos-delay="200">
+                        <a href="#" class="solution-card-v2"
+                            style="background-image: url('./img/indumentarialaboral.webp');">
+                            <div class="solution-card-content">
+                                <h3>Indumentaria Laboral</h3>
+                                <p>Ropa de trabajo técnica para los sectores de minería, construcción y agroindustria.
+                                </p>
+                                <span class="arrow-icon">→</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Tarjeta 4: EPP -->
+                    <div class="col-lg-6 col-md-6" data-aos="zoom-in-up" data-aos-delay="300">
+                        <a href="#" class="solution-card-v2" style="background-image: url('./img/epp.jpg');">
+                            <div class="solution-card-content">
+                                <h3>Protección Personal (EPP)</h3>
+                                <p>Equipos certificados que son la primera línea de defensa para cada trabajador.</p>
+                                <span class="arrow-icon">→</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================
+        SECCIÓN "CLIENTES" (PRUEBA SOCIAL)
+        Un carrusel infinito de logos para generar confianza.
+        ================================================================== -->
+        <section id="clientes" class="py-5 bg-light">
+            <div class="container text-center">
+                <h4 class="text-secondary mb-4" data-aos="fade-up">Empresas que confían en nuestra gente</h4>
+                <div class="logo-scroller" data-aos="fade-up">
+                    <div class="logo-scroller-inner">
+                        <!-- Aquí irán los logos de los clientes, duplicados para el efecto infinito -->
+                        <img src="./img/logosempresas/huarp.png" alt="Logo Cliente 1">
+                        <img src="./img/logosempresas/ias.png" alt="Logo Cliente 2">
+                        <img src="./img/logosempresas/mcs.png" alt="Logo Cliente 3">
+                        <img src="./img/logosempresas/santis.png" alt="Logo Cliente 4">
+                        <img src="./img/logosempresas/vicuña.png" alt="Logo Cliente 5">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =================================================================
+SECCIÓN "TIENDA DESTACADA" (LA SECCIÓN INNOVADORA)
+Una antesala interactiva a la tienda virtual.
+================================================================== -->
+        <section id="tienda-destacada" class="py-5 bg-light">
+            <div class="container">
+                <div class="text-center mb-5" data-aos="fade-up">
+                    <h2 class="display-5">Colección Destacada</h2>
+                    <p class="lead text-secondary">Diseñadas para la máxima exigencia. Confeccionadas con orgullo local.
+                    </p>
+                </div>
+
+                <div class="row g-4 justify-content-center">
+                    <!-- Producto Estrella 1 -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <a href="#" class="product-showcase-card">
+                            <img src="./img/camisaignifuga.jpg" alt="Camisa técnica para minería" class="product-image">
+                            <div class="product-card-logo">
+                                <!-- Usaremos el isotipo de la marca como un sello -->
+                                <img src="./img/logov.png" alt="Isotipo ICAA">
+                            </div>
+                            <div class="product-card-content">
+                                <h3>Camisa Ignífuga X-PRO</h3>
+                                <p>Máxima protección y movilidad para el sector minero.</p>
+                                <span class="btn-ver-mas">Ver más</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Producto Estrella 2 -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <a href="#" class="product-showcase-card">
+                            <img src="./img/equipo.jpg" alt="Pantalón de trabajo reforzado" class="product-image">
+                            <div class="product-card-logo">
+                                <img src="./img/logov.png" alt="Isotipo ICAA">
+                            </div>
+                            <div class="product-card-content">
+                                <h3>Pantalón Cargo Constructor</h3>
+                                <p>Resistencia y funcionalidad para cada jornada en la obra.</p>
+                                <span class="btn-ver-mas">Ver más</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Producto Estrella 3 -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                        <a href="#" class="product-showcase-card">
+                            <img src="./img/tricota.jpg" alt="Uniformes para Fuerza" class="product-image">
+                            <div class="product-card-logo">
+                                <img src="./img/logov.png" alt="Isotipo ICAA">
+                            </div>
+                            <div class="product-card-content">
+                                <h3>Tricota Táctica</h3>
+                                <p>Comodidad y durabilidad para el trabajo de seguridad.</p>
+                                <span class="btn-ver-mas">Ver más</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Botón principal para ir a la tienda completa -->
+                <div class="text-center mt-5 pt-3" data-aos="fade-up">
+                    <a href="URL_DE_TU_TIENDA_VIRTUAL" class="btn btn-brand-primary btn-lg">
+                        Explorar la Tienda Completa
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <!-- =================================================================
+        SECCIÓN "CONTACTO"
+        Un cierre claro, con un formulario y datos de contacto directos.
+        ================================================================== -->
+        <section id="contacto" class="py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6" data-aos="fade-right">
+                        <h2 class="display-4">Hablemos de tu proyecto.</h2>
+                        <p class="lead">Estamos listos para ser tus aliados estratégicos. Cuéntanos qué necesitas y
+                            crearemos una solución textil a la medida de tu equipo.</p>
+                        <div class="contact-info mt-4">
+                            <p><strong>Email:</strong> <a href="mailto:contacto@icaa.com.ar">contacto@icaa.com.ar</a>
+                            </p>
+                            <p><strong>Teléfono:</strong> <a href="tel:+542648928123">+54 264 892 8123</a></p>
+                            <p><strong>Dirección:</strong> San Juan 892, Jáchal, San Juan, Argentina.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+                        <form id="contact-form" class="p-4 p-md-5 rounded shadow-sm">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Nombre Completo</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="company" class="form-label">Empresa</label>
+                                <input type="text" class="form-control" id="company">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Mensaje</label>
+                                <textarea class="form-control" id="message" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-brand-primary w-100">Enviar Consulta</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- =================================================================
+    FOOTER
+    Simple, profesional y con el toque final del "Hecho en Jáchal".
+    ================================================================== -->
+    <footer class="py-4 text-center">
+        <div class="container">
+            <p class="mb-0 text-white">© 2025 ICAA Indumentaria. Todos los derechos reservados.</p>
+            <p class="mb-0 made-in">Diseñado por GX grupoxamamen.com.ar</p>
+        </div>
+    </footer>
+
+    <!-- Scripts (Bootstrap y la librería de animación) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Nuestro Script Personalizado (Lo crearemos al final) -->
+    <script src="script.js"></script>
+</body>
+
+</html>

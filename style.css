@@ -1,0 +1,624 @@
+/* =================================================================
+   1. VARIABLES GLOBALES Y ESTILOS BASE
+   Aquí definimos el ADN de la marca: colores y tipografías.
+================================================================= */
+:root {
+    --color-primary: #D47760;   /* Terracota, para acción y llamado */
+    --color-secondary: #9AA889; /* Verde Salvia, para calma y fondos */
+    --color-text: #28536b;      /* Azul Petróleo, para textos legibles y profesionales */
+    --color-background: #FFFFFF;
+    --color-light-bg: #f8f9fa;  /* Un gris muy suave para secciones alternas */
+    
+    --font-heading: 'Inter', sans-serif;
+    --font-body: 'Montserrat', sans-serif;
+
+    --navbar-height: 80px;
+}
+
+body {
+    font-family: var(--font-body);
+    color: #555;
+    line-height: 1.7;
+    background-color: var(--color-background);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+
+/* =================================================================
+   2. HEADER Y NAVEGACIÓN
+   Efecto de transparencia y cambio de logos al hacer scroll.
+================================================================= */
+#main-navbar {
+    padding: 15px 0;
+    transition: all 0.4s ease-in-out;
+}
+
+#main-navbar.navbar-scrolled {
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    padding: 10px 0;
+}
+
+/* Contenedor del logo */
+#main-navbar .navbar-brand {
+    transition: all 0.4s ease-in-out;
+}
+
+/* Estilo para AMBOS logos */
+#main-navbar .navbar-brand img {
+    height: 100px; /* Tamaño GRANDE inicial */
+    transition: height 0.4s ease-in-out; /* Animación suave del cambio de tamaño */
+}
+
+/* Cuando se hace scroll, el logo se achica */
+#main-navbar.navbar-scrolled .navbar-brand img {
+    height: 45px; /* Tamaño PEQUEÑO y elegante */
+}
+
+#main-navbar .nav-link {
+    font-weight: 500;
+    font-size: 1rem;
+    color: white;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+#main-navbar.navbar-scrolled .nav-link {
+    color: var(--color-text);
+}
+
+#main-navbar .nav-link:hover {
+    color: var(--color-primary) !important;
+}
+
+/* Estilos de los botones de la Nav (sin cambios) */
+.btn-brand-outline {
+    border: 2px solid white;
+    color: white;
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.btn-brand-outline:hover {
+    background-color: white;
+    color: var(--color-primary);
+}
+
+#main-navbar.navbar-scrolled .btn-brand-outline {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+#main-navbar.navbar-scrolled .btn-brand-outline:hover {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+
+/* =================================================================
+   3. SECCIÓN HERO (LA SOLUCIÓN DEFINITIVA CON CIELO)
+================================================================= */
+#hero {
+    height: 100vh;
+    position: relative;
+    color: white;
+    overflow: hidden;
+}
+
+/* El "Cielo": Tu degradado. Esto no cambia. */
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #D47760, #28536b);
+    z-index: -1;
+}
+
+/* 
+   LA MONTAÑA: Ahora es un div con la imagen como fondo.
+   Esto nos da control total.
+*/
+.hero-image-bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* ¡CONTROL TOTAL! Define qué tan alta es la montaña. */
+    
+    background-image: url('./img/montana.png'); /* Ruta a tu imagen */
+    background-size: cover;/* Clave: asegura que TODA la montaña se vea sin deformarse */
+    background-repeat: no-repeat;
+    background-position: bottom center; /* Pega la imagen a la base y la centra */
+    mix-blend-mode: multiply; /* La magia que fusiona la montaña con el cielo */
+    
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* El Contenido y la Flecha (sin cambios) */
+.hero-content {
+    height: 100%;
+    position: relative;
+    z-index: 1; 
+}
+/* ... (El resto de tus estilos para h1, lead, y la flecha de scroll se mantienen igual) ... */
+#hero h1 {
+    font-weight: 900;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    color: white;
+    text-shadow: 0 3px 20px rgba(0,0,0, 0.4);
+}
+
+#hero .lead {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    color: rgba(255,255,255,0.95);
+    max-width: 700px;
+    margin: 20px auto 0 auto;
+    text-shadow: 0 2px 10px rgba(0,0,0, 0.3);
+}
+
+.scroll-down-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 40px;
+    border: 2px solid white;
+    border-radius: 50px;
+    z-index: 2;
+}
+
+.scroll-down-indicator span {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 8px;
+    background: white;
+    border-radius: 2px;
+    animation: scroll-bounce 2s infinite;
+}
+
+@keyframes scroll-bounce {
+    0% { top: 8px; opacity: 1; }
+    100% { top: 20px; opacity: 0; }
+}
+
+/* =================================================================
+   4. SECCIONES GENERALES Y CONTADORES
+================================================================= */
+section {
+    overflow: hidden; /* Evita barras de scroll por animaciones */
+}
+
+.bg-light {
+    background-color: var(--color-light-bg) !important;
+}
+
+/* Estilo para los contadores de impacto */
+.counter-item {
+    text-align: center;
+}
+.counter-item .counter-number {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--color-primary);
+}
+.counter-item span {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--color-primary);
+    vertical-align: super;
+    margin-left: 2px;
+}
+.counter-item p {
+    margin-top: -5px;
+    font-weight: 500;
+    color: #777;
+}
+
+
+/* =================================================================
+   ESTILOS PARA TARJETAS DE SOLUCIONES 2.0
+================================================================= */
+.solution-card-v2 {
+    display: flex; /* Usamos flex para alinear el contenido al final */
+    align-items: flex-end;
+    position: relative;
+    height: 450px;
+    padding: 40px;
+    border-radius: 15px;
+    overflow: hidden;
+    text-decoration: none;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    transition: all 0.4s ease;
+}
+
+/* El borde animado que aparece al hacer hover */
+.solution-card-v2::after {
+    content: '';
+    position: absolute;
+    inset: 0; /* Abarca toda la tarjeta */
+    border: 4px solid var(--color-primary);
+    border-radius: 15px;
+    opacity: 0;
+    transform: scale(1.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.solution-card-v2:hover::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* El overlay oscuro que aparece al hacer hover para mejorar legibilidad */
+.solution-card-v2::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 50%);
+    opacity: 0.8;
+    transition: opacity 0.4s ease;
+}
+
+.solution-card-v2:hover::before {
+    opacity: 1;
+}
+
+/* Contenedor del texto */
+.solution-card-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.solution-card-v2 h3 {
+    color: white;
+    font-size: clamp(1.8rem, 3vw, 2.2rem); /* Fuente adaptable */
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+/* La descripción que aparece al hacer hover */
+.solution-card-v2 p {
+    margin: 0;
+    font-weight: 400;
+    max-height: 0; /* Oculto por defecto */
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.solution-card-v2:hover p {
+    max-height: 100px; /* Le damos espacio para que aparezca */
+    opacity: 0.9;
+}
+
+/* El icono de la flecha que aparece al hacer hover */
+.arrow-icon {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1;
+    margin-top: 15px;
+    opacity: 0;
+    transform: translateX(-15px);
+    transition: all 0.4s ease;
+}
+
+.solution-card-v2:hover .arrow-icon {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* =================================================================
+   6. CARRUSEL DE LOGOS INFINITO
+   Pura magia CSS con animaciones.
+================================================================= */
+.logo-scroller {
+    max-width: 900px;
+    margin: auto;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+}
+.logo-scroller-inner {
+    display: flex;
+    width: fit-content;
+    /* La magia de la animación la aplicaremos con JS para pausar en hover,
+       pero aquí definimos la base */
+    animation: scroll-logos 30s linear infinite;
+}
+.logo-scroller-inner img {
+    height: 40px;
+    margin: 0 40px;
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+.logo-scroller-inner:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+@keyframes scroll-logos {
+  to {
+    transform: translateX(calc(-50%)); /* Mueve la mitad de la tira de logos */
+  }
+}
+
+/* =================================================================
+   NUEVA SECCIÓN: TIENDA DESTACADA
+================================================================= */
+.product-showcase-card {
+    display: block;
+    position: relative;
+    height: 500px;
+    border-radius: 15px;
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.product-showcase-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(40, 83, 107, 0.2);
+}
+
+.product-showcase-card .product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.product-showcase-card:hover .product-image {
+    transform: scale(1.1);
+}
+
+/* El sello del logo de ICAA */
+.product-card-logo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+.product-card-logo img {
+    width: 60%;
+    transition: transform 0.5s ease-in-out;
+}
+.product-showcase-card:hover .product-card-logo img {
+    transform: rotate(180deg);
+}
+
+/* El contenido que se revela */
+.product-card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 60px 30px 30px 30px;
+    color: white;
+    z-index: 1;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
+    
+    transform: translateY(calc(100% - 80px)); /* Inicialmente solo se ve un trocito */
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.product-showcase-card:hover .product-card-content {
+    transform: translateY(0); /* Al hacer hover, se revela todo */
+}
+
+.product-card-content h3 {
+    color: white;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+.product-card-content p {
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease 0.2s, transform 0.4s ease 0.2s;
+}
+.product-showcase-card:hover .product-card-content p {
+    opacity: 0.9;
+    transform: translateY(0);
+}
+
+/* Botón "Ver más" dentro de la tarjeta */
+.btn-ver-mas {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s ease 0.3s;
+}
+.product-showcase-card:hover .btn-ver-mas {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =================================================================
+   SECCIÓN ÉPICA: MINERÍA DE ALTA MONTAÑA (CÓDIGO CORREGIDO)
+================================================================= */
+#mineria-hero {
+    position: relative;
+    padding: 100px 0;
+    color: white;
+    overflow: hidden;
+    background-color: #1a2328;
+    background-image: url('./img/mina.jpg'); /* Ruta a tu imagen */
+    background-size: cover;
+    background-position: center;
+}
+
+/* El fondo con efecto Parallax */
+.parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150%;
+    
+    /* --- ¡AQUÍ ESTÁ LA CORRECCIÓN CLAVE! --- */
+    /* Usamos url() y la ruta correcta al archivo mina.jpg */
+    
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+/* El resto del código no necesita cambios */
+.hud-container {
+    position: relative;
+    z-index: 2;
+}
+
+.hud-content {
+    background: rgba(10, 25, 40, 0.7);
+    border: 1px solid rgba(0, 191, 255, 0.3);
+    padding: 40px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 10px;
+}
+
+.hud-content h2 {
+    color: white;
+    font-weight: 900;
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.hud-content .lead {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.features-grid {
+    margin-top: 30px;
+    display: grid;
+    gap: 20px;
+}
+
+.feature-item {
+    border-left: 3px solid var(--color-primary);
+    padding-left: 15px;
+}
+
+.feature-item .feature-title {
+    display: block;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.feature-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.scan-line {
+    position: absolute;
+    top: -10%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, transparent, var(--color-primary), transparent);
+    box-shadow: 0 0 15px 3px var(--color-primary);
+    opacity: 0.8;
+    z-index: 1;
+    animation: scan-animation 8s linear infinite;
+}
+
+@keyframes scan-animation {
+    0% {
+        top: -10%;
+    }
+    100% {
+        top: 110%;
+    }
+}
+
+
+
+
+/* =================================================================
+   7. FORMULARIO DE CONTACTO Y FOOTER
+================================================================= */
+#contact-form {
+    background: var(--color-light-bg);
+}
+.form-control {
+    background: white;
+    border: 1px solid #e0e0e0;
+    padding: 12px 15px;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+}
+.form-control:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(212, 119, 96, 0.2);
+}
+
+.btn-brand-primary {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: white;
+    font-weight: 700;
+    padding: 12px 30px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+.btn-brand-primary:hover {
+    background-color: #c06349;
+    border-color: #c06349;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+footer {
+    background-color: var(--color-text); /* El azul oscuro profesional */
+    color: rgba(255,255,255,0.7);
+}
+footer .made-in {
+    color: var(--color-secondary); /* El verde salvia para el toque de orgullo local */
+    font-weight: 500;
+}
