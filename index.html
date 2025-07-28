@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Título y Metadatos para SEO y Redes Sociales -->
     <title>ICAA Indumentaria | Seguridad y Orgullo desde Jáchal</title>
     <meta name="description"
         content="Confeccionamos indumentaria técnica de alta calidad para minería, construcción y agroindustria. Un proyecto con impacto local y compromiso social fundado en Jáchal.">
@@ -18,24 +17,19 @@
     <meta property="og:url" content="https://www.icaa.com.ar/">
     <meta property="og:type" content="website">
 
-    <!-- Favicon (icono en la pestaña del navegador) -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./img/logov.ico" type="image/x-icon">
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-    <!-- Librería de Animaciones (Animate On Scroll) - La usaremos con JS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <!-- Google Fonts: Inter para Títulos y Montserrat para Texto -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&family=Montserrat:wght@400;500;700&display=swap"
         rel="stylesheet">
 
-    <!-- Hoja de Estilos Personalizada -->
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -44,14 +38,18 @@
     <header>
         <nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="#"><img src="./img/logoh.png" alt="Logo ICAA Indumentaria" height="100"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+                 <a class="navbar-brand" href="#hero">
+                <img src="./img/logoh.png" alt="Logo ICAA Indumentaria" height="100">
+            </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span
+                        class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto align-items-center">
-                        <li class="nav-item"><a class="nav-link" href="#nosotras">Nosotras</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#filosofia">Filosofía</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#staff">Nosotras</a></li>
                         <li class="nav-item"><a class="nav-link" href="#soluciones">Soluciones</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-brand-outline ms-lg-3" href="#contacto">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#clientes">Nuestros Clientes</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-brand-outline ms-lg-3"
+                                href="#contacto">Contacto</a></li>
                     </ul>
                 </div>
             </div>
@@ -74,22 +72,40 @@
                 </div>
             </div>
         </section>
-        
+
+        <!-- =SECCIÓN "NOSOTRAS"= -->
         <section id="nosotras" class="py-5">
             <div class="container">
                 <div class="row gx-5 align-items-center">
                     <div class="col-lg-6" data-aos="fade-right">
-                        <img src="./img/equipo.jpg" class="img-fluid rounded shadow-lg" alt="Nancy Heredia y el equipo de ICAA Indumentaria">
+                        <!-- Aquí va la foto del equipo -->
+                        <img src="./img/equipo.jpg" class="img-fluid rounded shadow-lg"
+                            alt="Nancy Heredia y el equipo de ICAA Indumentaria en su taller de Jáchal">
                     </div>
                     <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
                         <h2 class="display-5">Un sueño personal,<br>un proyecto colectivo.</h2>
-                        <p class="text-secondary">Somos un taller textil ubicado en Jáchal, con un equipo comprometido con el empleo local y la responsabilidad social. Cada prenda que confeccionamos crea oportunidades de trabajo y aprendizaje para mujeres y familias de nuestra comunidad.</p>
-                        <p class="text-secondary">Trabajar con ICAA es sumar valor a San Juan, construir lazos de confianza y demostrar un compromiso real con la sostenibilidad y la inclusión.</p>
-                        
-                        <div class="key-features mt-4">
-                            <div class="feature-point">✔️ <strong>Calidad Superior:</strong> Terminaciones impecables y diseños funcionales con materiales duraderos y seguros.</div>
-                            <div class="feature-point">✔️ <strong>Seriedad y Cumplimiento:</strong> Respetamos los plazos de entrega y los requerimientos de cada cliente.</div>
-                            <div class="feature-point">✔️ <strong>Asesoramiento Experto:</strong> Nuestro equipo técnico te acompaña en la selección de telas, diseño y moldería.</div>
+                        <p class="text-secondary">ICAA Indumentaria nació como una visión de Nancy Heredia en el corazón
+                            de Jáchal,
+                            con el objetivo de generar valor y oportunidades desde el interior profundo del país. Con el
+                            tiempo, este
+                            sueño se transformó en un proyecto colectivo, y hoy somos cuatros socios comprometidos con
+                            una misma misión:
+                            fortalecer la industria textil local, crear empleo digno y aportar al desarrollo productivo
+                            de nuestra región</p>
+
+                            <div id="impact-counters" class="d-flex justify-content-between mt-4 pt-3">
+                            <div class="counter-item">
+                                <span class="counter-number" data-target="9">0</span><span>+</span>
+                                <p>Colaboradoras locales</p>
+                            </div>
+                            <div class="counter-item">
+                                <span class="counter-number" data-target="100">0</span><span>%</span>
+                                <p>Compromiso Social</p>
+                            </div>
+                            <div class="counter-item">
+                                <span class="counter-number" data-target="4">0</span>
+                                <p>Industrias Clave</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -102,84 +118,136 @@
                     <h2 class="display-5">El Tejido de Nuestros Principios</h2>
                     <p class="lead text-secondary">La esencia que guía cada una de nuestras puntadas.</p>
                 </div>
-                <ul class="nav nav-pills justify-content-center mb-4" id="filosofia-tabs" role="tablist" data-aos="fade-up" data-aos-delay="100">
-                    <li class="nav-item" role="presentation"><button class="nav-link active" id="mision-tab" data-bs-toggle="pill" data-bs-target="#mision" type="button" role="tab">Misión</button></li>
-                    <li class="nav-item" role="presentation"><button class="nav-link" id="vision-tab" data-bs-toggle="pill" data-bs-target="#vision" type="button" role="tab">Visión</button></li>
-                    <li class="nav-item" role="presentation"><button class="nav-link" id="valores-tab" data-bs-toggle="pill" data-bs-target="#valores" type="button" role="tab">Valores</button></li>
+                <ul class="nav nav-pills justify-content-center mb-4" id="filosofia-tabs" role="tablist"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <li class="nav-item" role="presentation"><button class="nav-link active" id="mision-tab"
+                            data-bs-toggle="pill" data-bs-target="#mision" type="button" role="tab">Misión</button></li>
+                    <li class="nav-item" role="presentation"><button class="nav-link" id="vision-tab"
+                            data-bs-toggle="pill" data-bs-target="#vision" type="button" role="tab">Visión</button></li>
+                    <li class="nav-item" role="presentation"><button class="nav-link" id="valores-tab"
+                            data-bs-toggle="pill" data-bs-target="#valores" type="button" role="tab">Valores</button>
+                    </li>
                 </ul>
                 <div class="tab-content" id="filosofia-tabs-content" data-aos="fade-up" data-aos-delay="200">
                     <div class="tab-pane fade show active" id="mision" role="tabpanel">
-                        <p class="tab-text">Diseñamos y confeccionamos soluciones textiles duraderas, funcionales e innovadoras que elevan la seguridad, la comodidad y el desempeño de trabajadores en sectores como la minería, la construcción, el agro, las fuerzas de seguridad, el ámbito público y el entorno escolar. Nos comprometemos con la calidad superior, la personalización y la satisfacción total de nuestros clientes.</p>
+                        <p class="tab-text">Diseñamos y confeccionamos soluciones textiles duraderas, funcionales e
+                            innovadoras que elevan la seguridad, la comodidad y el desempeño de trabajadores en sectores
+                            como la minería, la construcción, el agro, las fuerzas de seguridad, el ámbito público y el
+                            entorno escolar. Nos comprometemos con la calidad superior, la personalización y la
+                            satisfacción total de nuestros clientes.</p>
                     </div>
                     <div class="tab-pane fade" id="vision" role="tabpanel">
-                        <p class="tab-text">Ser una empresa textil reconocida a nivel regional por la calidad, confiabilidad y compromiso en la confección de indumentaria laboral, escolar y técnica. Aspiramos a potenciar el desempeño y bienestar de quienes día a día construyen, cuidan y desarrollan nuestra sociedad, creciendo desde nuestras raíces con identidad, innovación y responsabilidad.</p>
+                        <p class="tab-text">Ser una empresa textil reconocida a nivel regional por la calidad,
+                            confiabilidad y compromiso en la confección de indumentaria laboral, escolar y técnica.
+                            Aspiramos a potenciar el desempeño y bienestar de quienes día a día construyen, cuidan y
+                            desarrollan nuestra sociedad, creciendo desde nuestras raíces con identidad, innovación y
+                            responsabilidad.</p>
                     </div>
                     <div class="tab-pane fade" id="valores" role="tabpanel">
                         <ul class="valores-list">
-                            <li><strong>Excelencia:</strong> Elevamos el estándar en cada etapa, garantizando máxima calidad, resistencia y confort.</li>
-                            <li><strong>Innovación Continua:</strong> Incorporamos tecnología de vanguardia y diseño inteligente para cada sector.</li>
-                            <li><strong>Compromiso con el Cliente:</strong> Ofrecemos soluciones a medida, comprendiendo las necesidades de cada rubro.</li>
-                            <li><strong>Responsabilidad Social:</strong> Producimos con conciencia, apostando al desarrollo de nuestra comunidad.</li>
-                            <li><strong>Confianza y Transparencia:</strong> Construimos relaciones duraderas basadas en la seriedad y la integridad.</li>
+                            <li><strong>Excelencia:</strong> Elevamos el estándar en cada etapa, garantizando máxima
+                                calidad, resistencia y confort.</li>
+                            <li><strong>Innovación Continua:</strong> Incorporamos tecnología de vanguardia y diseño
+                                inteligente para cada sector.</li>
+                            <li><strong>Compromiso con el Cliente:</strong> Ofrecemos soluciones a medida, comprendiendo
+                                las necesidades de cada rubro.</li>
+                            <li><strong>Responsabilidad Social:</strong> Producimos con conciencia, apostando al
+                                desarrollo de nuestra comunidad.</li>
+                            <li><strong>Confianza y Transparencia:</strong> Construimos relaciones duraderas basadas en
+                                la seriedad y la integridad.</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- =: STAFF INTERACTIVO = -->
         <section id="staff" class="py-5">
             <div class="container">
                 <div class="text-center mb-5" data-aos="fade-up">
                     <h2 class="display-5">El Equipo Detrás de Cada Prenda</h2>
-                    <p class="lead text-secondary">Cuatro socios, una misma pasión por la calidad y el compromiso.</p>
+                    <p class="lead text-secondary">La pasión y el compromiso que hacen posible este proyecto.</p>
                 </div>
-                <div class="row g-4 justify-content-center">
-                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                        <div class="team-card">
-                            <div class="team-photo"><img src="./img/staff/foto1.jpg" alt="Foto de Socio 1"></div>
-                            <div class="team-info"><h5>Nombre Apellido</h5><p>Función / Rol</p></div>
+                <div class="row g-5 align-items-center">
+                        <div class="col-lg-7" data-aos="fade-right">
+                        <div id="staff-display" class="staff-display-container">
+                            <!-- La imagen grande y la información se cargarán aquí con JS -->
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                        <div class="team-card">
-                            <div class="team-photo"><img src="./img/staff/foto2.jpg" alt="Foto de Socio 2"></div>
-                            <div class="team-info"><h5>Nombre Apellido</h5><p>Función / Rol</p></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                        <div class="team-card">
-                            <div class="team-photo"><img src="./img/staff/foto3.jpg" alt="Foto de Socio 3"></div>
-                            <div class="team-info"><h5>Nombre Apellido</h5><p>Función / Rol</p></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                        <div class="team-card">
-                            <div class="team-photo"><img src="./img/staff/foto4.jpg" alt="Foto de Socio 4"></div>
-                            <div class="team-info"><h5>Nombre Apellido</h5><p>Función / Rol</p></div>
+                    <div class="col-lg-5" data-aos="fade-left" data-aos-delay="200">
+                        <div class="staff-selector">
+                            <!-- Perfil 1 -->
+                            <div class="team-selector-card active" data-member="1">
+                                <img src="./img/staff/foto1.jpg" alt="Foto de Nancy Heredia">
+                                <div class="selector-info">
+                                    <h5>Nancy Heredia</h5>
+                                    <p>Fundadora y Directora</p>
+                                </div>
+                            </div>
+                            <!-- Perfil 2 -->
+                            <div class="team-selector-card" data-member="2">
+                                <img src="./img/staff/foto2.jpg" alt="Foto de Socio 2">
+                                <div class="selector-info">
+                                    <h5>Nombre Socio 2</h5>
+                                    <p>Gerente de Producción</p>
+                                </div>
+                            </div>
+                            <!-- Perfil 3 -->
+                            <div class="team-selector-card" data-member="3">
+                                <img src="./img/staff/foto3.jpg" alt="Foto de Socio 3">
+                                <div class="selector-info">
+                                    <h5>Nombre Socio 3</h5>
+                                    <p>Encargado de Calidad</p>
+                                </div>
+                            </div>
+                            <!-- Perfil 4 -->
+                            <div class="team-selector-card" data-member="4">
+                                <img src="./img/staff/foto4.jpg" alt="Foto de Socio 4">
+                                <div class="selector-info">
+                                    <h5>Nombre Socio 4</h5>
+                                    <p>Desarrollo Comercial</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        
         <section id="proceso" class="py-5 bg-light">
             <div class="container text-center">
                 <h2 class="display-6" data-aos="fade-up">No solo diseñamos ropa de trabajo.</h2>
-                <p class="lead text-secondary mb-5" data-aos="fade-up" data-aos-delay="100">Acompañamos a quienes construyen el país.</p>
+                <p class="lead text-secondary mb-5" data-aos="fade-up" data-aos-delay="100">Acompañamos a quienes
+                    construyen el país.</p>
                 <div class="row g-4">
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                        <div class="process-card"><div class="process-icon"></div><h4>Seguridad Intransigente</h4><p>Cada costura, tela y diseño están pensados para brindar la máxima protección y confianza al trabajador.</p></div>
+                        <div class="process-card">
+                            <div class="process-icon"></div>
+                            <h4>Seguridad Intransigente</h4>
+                            <p>Cada costura, tela y diseño están pensados para brindar la máxima protección y confianza
+                                al trabajador.</p>
+                        </div>
                     </div>
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                        <div class="process-card"><div class="process-icon"></div><h4>Identidad que Inspira</h4><p>Personalizamos cada prenda para que refleje los valores y el orgullo de pertenencia de cada empresa.</p></div>
+                        <div class="process-card">
+                            <div class="process-icon"></div>
+                            <h4>Identidad que Inspira</h4>
+                            <p>Personalizamos cada prenda para que refleje los valores y el orgullo de pertenencia de
+                                cada empresa.</p>
+                        </div>
                     </div>
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
-                        <div class="process-card"><div class="process-icon"></div><h4>Confort para la Jornada</h4><p>Creemos que la comodidad es clave para la productividad y el bienestar. Creamos ropa para vivirla.</p></div>
+                        <div class="process-card">
+                            <div class="process-icon"></div>
+                            <h4>Confort para la Jornada</h4>
+                            <p>Creemos que la comodidad es clave para la productividad y el bienestar. Creamos ropa para
+                                vivirla.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Sección de Minería  BORRAR SI DESIDEN NO PONERLO
         <section id="mineria-hero">
             <div class="parallax-bg"></div>
             <div class="scan-line"></div>
@@ -200,33 +268,141 @@
                 </div>
             </div>
         </section>
-
+        -->
         <section id="soluciones" class="py-5">
             <div class="container">
                 <div class="text-center mb-5" data-aos="fade-up">
                     <h2 class="display-5">Soluciones Integrales</h2>
-                    <p class="lead text-secondary">Desde la protección personal hasta la identidad corporativa y escolar.</p>
+                    <p class="lead text-secondary">Desde la protección personal hasta la identidad corporativa y
+                        escolar.</p>
                 </div>
                 <div class="row g-4 g-lg-5">
-                    <div class="col-lg-6 col-md-6" data-aos="zoom-in-up"><a href="#" class="solution-card-v2" style="background-image: url('./img/fuerzalaboral.webp');"><div class="solution-card-content"><h3>Fuerza de Seguridad</h3><p>Uniformes tácticos que garantizan resistencia y funcionalidad.</p><span class="arrow-icon">→</span></div></a></div>
-                    <div class="col-lg-6 col-md-6" data-aos="zoom-in-up" data-aos-delay="100"><a href="#" class="solution-card-v2" style="background-image: url('./img/uniformesescolares.png');"><div class="solution-card-content"><h3>Uniformes Escolares</h3><p>Diseño, comodidad y durabilidad para el día a día escolar.</p><span class="arrow-icon">→</span></div></a></div>
-                    <div class="col-lg-6 col-md-6" data-aos="zoom-in-up" data-aos-delay="200"><a href="#" class="solution-card-v2" style="background-image: url('./img/indumentarialaboral.webp');"><div class="solution-card-content"><h3>Indumentaria Laboral</h3><p>Ropa técnica para minería, construcción y agroindustria.</p><span class="arrow-icon">→</span></div></a></div>
-                    <div class="col-lg-6 col-md-6" data-aos="zoom-in-up" data-aos-delay="300"><a href="#" class="solution-card-v2" style="background-image: url('./img/epp.jpg');"><div class="solution-card-content"><h3>Protección Personal (EPP)</h3><p>Equipos certificados que son la primera línea de defensa.</p><span class="arrow-icon">→</span></div></a></div>
+                    <div class="col-lg-6 col-md-6" data-aos="zoom-in-up"><a href="#" class="solution-card-v2"
+                            style="background-image: url('./img/fuerzalaboral.webp');">
+                            <div class="solution-card-content">
+                                <h3>Fuerza de Seguridad</h3>
+                                <p>Uniformes tácticos que garantizan resistencia y funcionalidad.</p><span
+                                    class="arrow-icon">→</span>
+                            </div>
+                        </a></div>
+                    <div class="col-lg-6 col-md-6" data-aos="zoom-in-up" data-aos-delay="100"><a href="#"
+                            class="solution-card-v2" style="background-image: url('./img/uniformesescolares.png');">
+                            <div class="solution-card-content">
+                                <h3>Uniformes Escolares</h3>
+                                <p>Diseño, comodidad y durabilidad para el día a día escolar.</p><span
+                                    class="arrow-icon">→</span>
+                            </div>
+                        </a></div>
+                    <div class="col-lg-6 col-md-6" data-aos="zoom-in-up" data-aos-delay="200"><a href="#"
+                            class="solution-card-v2" style="background-image: url('./img/indumentarialaboral.webp');">
+                            <div class="solution-card-content">
+                                <h3>Indumentaria Laboral</h3>
+                                <p>Ropa técnica para minería, construcción y agroindustria.</p><span
+                                    class="arrow-icon">→</span>
+                            </div>
+                        </a></div>
+                    <div class="col-lg-6 col-md-6" data-aos="zoom-in-up" data-aos-delay="300"><a href="#"
+                            class="solution-card-v2" style="background-image: url('./img/epp.jpg');">
+                            <div class="solution-card-content">
+                                <h3>Protección Personal (EPP)</h3>
+                                <p>Equipos certificados que son la primera línea de defensa.</p><span
+                                    class="arrow-icon">→</span>
+                            </div>
+                        </a></div>
                 </div>
             </div>
         </section>
 
+        <!-- Sección de Clientes viejo
         <section id="clientes" class="py-5 bg-light">
             <div class="container text-center">
-                <h4 class="text-secondary mb-4" data-aos="fade-up">Empresas que confían en nuestra gente</h4>
-                <div class="logo-scroller" data-aos="fade-up">
-                    <div class="logo-scroller-inner">
-                        <img src="./img/logosempresas/huarp.png" alt="Logo Huarpe"><img src="./img/logosempresas/ias.png" alt="Logo IAS"><img src="./img/logosempresas/mcs.png" alt="Logo MCS"><img src="./img/logosempresas/santis.png" alt="Logo Santis"><img src="./img/logosempresas/vicuña.png" alt="Logo Vicuña">
+                <h3 class="text-secondary mb-4" data-aos="fade-up">Las empresas que colaboran con nosotros</h3>
+                <h4 class="text-secondary mb-4" data-aos="fade-up">Empresas que crean un futuro mejor y confian en ICAA
+                    Indumentaria</h4>
+
+                <div class="key-features mt-4">
+                    <div class="feature-point">✔️ <strong>Empresas</strong> que apuestan al trabajo local.</div>
+                    <div class="feature-point">✔️ <strong>Marcas</strong> marcas que caminan a nuestro lado.</div>
+                    <div class="feature-point">✔️ <strong>Organizaciones</strong> que acompañan nuestro crecimiento.
                     </div>
+                    <div class="feature-point">✔️ <strong>Socios</strong> que suman al desarrolo de Jáchal.</div>
+
+                </div>
+
+
+        </section> -->
+
+        <!-- = SECCIÓN "CLIENTES Y ALIANZAS" =-->
+        <section id="clientes" class="py-5 bg-light">
+            <div class="container">
+                <div class="text-center mb-5" data-aos="fade-up">
+                    <h2 class="display-5">Construyendo Futuro Juntos</h2>
+                    <p class="lead text-secondary">Alianzas que apuestan por el trabajo local y el desarrollo de nuestra
+                        región.</p>
+                </div>
+                <div class="row g-5 align-items-center">
+
+                        <div class="col-lg-6" data-aos="fade-right">
+                        <div class="logo-carousel-container">
+                            <h4 class="text-center mb-4">Empresas que confían en ICAA</h4>
+                            <div class="logo-scroller">
+                                <div class="logo-scroller-inner">
+                                    <img src="./img/logosempresas/huarp.png" alt="Logo Huarpe">
+                                    <img src="./img/logosempresas/ias.png" alt="Logo IAS">
+                                    <img src="./img/logosempresas/mcs.png" alt="Logo MCS">
+                                    <img src="./img/logosempresas/santis.png" alt="Logo Santis">
+                                    <img src="./img/logosempresas/vicuña.png" alt="Logo Vicuña">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+                        <div class="alliance-points">
+                            <div class="alliance-item">
+                                <div class="alliance-icon">
+                                <img src="./img/logoV.png" alt="Icono ICAA">
+                                </div>
+                                <div class="alliance-text">
+                                    <h5>Empresas que Apuestan</h5>
+                                    <p>al trabajo local y al talento de nuestra gente.</p>
+                                </div>
+                            </div>
+                            <div class="alliance-item">
+                                <div class="alliance-icon">
+                                    <img src="./img/logov.png" alt="Icono ICAA">
+                                </div>
+                                <div class="alliance-text">
+                                    <h5>Marcas que Caminan</h5>
+                                    <p>a nuestro lado, fortaleciendo la industria regional.</p>
+                                </div>
+                            </div>
+                            <div class="alliance-item">
+                                <div class="alliance-icon">
+                                    <img src="./img/logov.png" alt="Icono ICAA">
+                                </div>
+                                <div class="alliance-text">
+                                    <h5>Organizaciones que Acompañan</h5>
+                                    <p>nuestro crecimiento y comparten nuestra visión.</p>
+                                </div>
+                            </div>
+                            <div class="alliance-item">
+                                <div class="alliance-icon">
+                                    <img src="./img/logov.png" alt="Icono ICAA">
+                                </div>
+                                <div class="alliance-text">
+                                    <h5>Socios que Suman</h5>
+                                    <p>valor al desarrollo sostenible de Jáchal y San Juan.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
 
+        <!-- Sección de Tienda Destacada  BORRAR SI NO TIENEN PENSANDO PONERLO
         <section id="tienda-destacada" class="py-5 bg-light">
             <div class="container">
                 <div class="text-center mb-5" data-aos="fade-up">
@@ -241,21 +417,33 @@
                 <div class="text-center mt-5 pt-3" data-aos="fade-up"><a href="#" class="btn btn-brand-primary btn-lg">Explorar la Tienda Completa</a></div>
             </div>
         </section>
-
+        -->
         <section id="contacto" class="py-5">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6" data-aos="fade-right">
                         <h2 class="display-4">Hablemos de tu proyecto.</h2>
-                        <p class="lead">Estamos listos para ser tus aliados. Cuéntanos qué necesitas y crearemos una solución a la medida de tu equipo.</p>
+                        <p class="lead">Estamos listos para ser tus aliados. Cuéntanos qué necesitas y crearemos una
+                            solución a la medida de tu equipo.</p>
                         <div class="contact-info mt-4">
-                            <p><strong>Email:</strong> <a href="mailto:contacto@icaa.com.ar">contacto@icaa.com.ar</a></p>
+                            <p><strong>Email:</strong> <a href="mailto:contacto@icaa.com.ar">contacto@icaa.com.ar</a>
+                            </p>
                             <p><strong>Teléfono:</strong> <a href="tel:+542648928123">+54 264 892 8123</a></p>
                             <p><strong>Dirección:</strong> San Juan 892, Jáchal, San Juan, Argentina.</p>
                         </div>
                     </div>
                     <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
-                        <form id="contact-form" class="p-4 p-md-5 rounded shadow-sm"><div class="mb-3"><label for="name" class="form-label">Nombre</label><input type="text" class="form-control" id="name" required></div><div class="mb-3"><label for="company" class="form-label">Empresa</label><input type="text" class="form-control" id="company"></div><div class="mb-3"><label for="email" class="form-label">Email</label><input type="email" class="form-control" id="email" required></div><div class="mb-3"><label for="message" class="form-label">Mensaje</label><textarea class="form-control" id="message" rows="4" required></textarea></div><button type="submit" class="btn btn-brand-primary w-100">Enviar Consulta</button></form>
+                        <form id="contact-form" class="p-4 p-md-5 rounded shadow-sm">
+                            <div class="mb-3"><label for="name" class="form-label">Nombre</label><input type="text"
+                                    class="form-control" id="name" required></div>
+                            <div class="mb-3"><label for="company" class="form-label">Empresa</label><input type="text"
+                                    class="form-control" id="company"></div>
+                            <div class="mb-3"><label for="email" class="form-label">Email</label><input type="email"
+                                    class="form-control" id="email" required></div>
+                            <div class="mb-3"><label for="message" class="form-label">Mensaje</label><textarea
+                                    class="form-control" id="message" rows="4" required></textarea></div><button
+                                type="submit" class="btn btn-brand-primary w-100">Enviar Consulta</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -265,7 +453,7 @@
     <footer class="py-4 text-center">
         <div class="container">
             <p class="mb-0 text-white">© 2025 ICAA Indumentaria. Todos los derechos reservados.</p>
-            <p class="mb-0 made-in">Diseñado por GX grupoxamamen.com.ar</p>
+            <p class="mb-0 made-in">Diseñado por grupoxamamen.com.ar</p>
         </div>
     </footer>
 
@@ -273,4 +461,5 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>

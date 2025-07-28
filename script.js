@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         initImpactCounters();
         handleInfiniteLogoScroller();
         handleSmoothScrolling();
+         initInteractiveStaff();
     };
 
     /**
@@ -135,6 +136,78 @@ document.addEventListener('DOMContentLoaded', () => {
                         block: 'start'
                     });
                 }
+            });
+        });
+    };
+
+     const initInteractiveStaff = () => {
+        const staffData = {
+            // Aquí centralizamos la información de cada miembro
+            1: {
+                name: 'Nancy Heredia',
+                role: 'Fundadora y Directora',
+                image: './img/staff/foto1.jpg',
+                description: 'Con su visión y liderazgo, Nancy transformó un sueño personal en un proyecto colectivo, impulsando el desarrollo local y creando oportunidades reales en Jáchal.'
+            },
+            2: {
+                name: 'Nombre Socio 2',
+                role: 'Gerente de Producción',
+                image: './img/staff/foto2.jpg',
+                description: 'Experto en optimización de procesos textiles, asegura que cada prenda cumpla con los más altos estándares de calidad y eficiencia en la confección.'
+            },
+            3: {
+                name: 'Nombre Socio 3',
+                role: 'Encargado de Calidad',
+                image: './img/staff/foto3.jpg',
+                description: 'Su atención meticulosa al detalle garantiza que cada costura, material y acabado sea impecable, ofreciendo un producto final que inspira confianza.'
+            },
+            4: {
+                name: 'Nombre Socio 4',
+                role: 'Desarrollo Comercial',
+                image: './img/staff/foto4.jpg',
+                description: 'Construye relaciones sólidas con nuestros clientes, entendiendo sus necesidades para ofrecer soluciones textiles que potencian su identidad y seguridad.'
+            }
+        };
+
+        const displayContainer = document.getElementById('staff-display');
+        const selectorCards = document.querySelectorAll('.team-selector-card');
+
+        if (!displayContainer || selectorCards.length === 0) return;
+
+        function updateDisplay(memberId) {
+            const member = staffData[memberId];
+            if (!member) return;
+
+            // Animación de salida
+            displayContainer.style.opacity = '0';
+
+            setTimeout(() => {
+                // Actualizar contenido
+                displayContainer.innerHTML = `
+                    <img src="${member.image}" alt="Foto de ${member.name}" class="staff-display-image">
+                    <div class="staff-display-info">
+                        <h3>${member.name}</h3>
+                        <span class="role">${member.role}</span>
+                        <p class="description">${member.description}</p>
+                    </div>
+                `;
+                // Animación de entrada
+                displayContainer.style.opacity = '1';
+            }, 300); // Este tiempo debe coincidir con la transición de CSS
+
+            // Actualizar la clase 'active' en la botonera
+            selectorCards.forEach(card => {
+                card.classList.toggle('active', card.dataset.member === memberId);
+            });
+        }
+
+        // Cargar el primer miembro por defecto
+        updateDisplay('1');
+
+        // Añadir el evento de clic a cada tarjeta selectora
+        selectorCards.forEach(card => {
+            card.addEventListener('click', () => {
+                updateDisplay(card.dataset.member);
             });
         });
     };
