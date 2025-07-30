@@ -1,0 +1,169 @@
+/* Estilos para la página de la Tienda */
+.store-main {
+    padding-top: 120px; /* Espacio para el navbar fijo */
+}
+
+/* Hero de Promociones */
+.promo-card {
+    display: block;
+    position: relative;
+    height: 250px;
+    border-radius: 15px;
+    overflow: hidden;
+    text-decoration: none;
+    color: white;
+    background-size: cover;
+    background-position: center;
+}
+.promo-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(40, 83, 107, 0.7) 0%, rgba(212, 119, 96, 0.5) 100%);
+    transition: background 0.3s ease;
+}
+.promo-card:hover::before {
+    background: linear-gradient(135deg, rgba(40, 83, 107, 0.5) 0%, rgba(212, 119, 96, 0.3) 100%);
+}
+.promo-content {
+    position: relative;
+    z-index: 1;
+    padding: 30px;
+}
+
+/* Filtros de Categoría */
+.btn-filter {
+    background-color: #e9ecef;
+    color: var(--color-text);
+    font-weight: 700;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+.btn-filter.active, .btn-filter:hover {
+    background-color: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+}
+
+/* Tarjetas de Producto */
+.product-card {
+    border-radius: 15px;
+    border: 1px solid #eee;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+}
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.product-card-image {
+    position: relative;
+    height: 250px;
+}
+.product-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.discount-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--color-primary);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 5px;
+}
+.product-card-body {
+    padding: 15px;
+}
+.product-card-body h5 {
+    font-size: 1.1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.product-card-body .category {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* Estilos para el Modal */
+.modal-content {
+    border-radius: 15px;
+    border: none;
+}
+#modal-product-image {
+    border-radius: 15px 0 0 15px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.size-option, .color-option {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+}
+.color-option {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    display: inline-block;
+}
+#modal-product-pricing .list-group-item {
+    border: none;
+    padding: 8px 0;
+}
+#modal-product-pricing .price {
+    font-weight: bold;
+    color: var(--color-primary);
+}
+.quantity-selector {
+    display: flex;
+}
+.quantity-selector input {
+    width: 60px;
+    border-left: none;
+    border-right: none;
+}
+.quantity-selector .btn {
+    z-index: 1;
+}
+
+/* =================================================================
+   ESTILOS PARA LA PAGINACIÓN
+================================================================= */
+.pagination-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.page-btn {
+    background-color: #e9ecef;
+    color: var(--color-text);
+    font-weight: 700;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    transition: all 0.3s ease;
+}
+
+.page-btn:hover {
+    background-color: #d8dde2;
+    border-color: #d8dde2;
+}
+
+.page-btn.active {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(212, 119, 96, 0.4);
+}

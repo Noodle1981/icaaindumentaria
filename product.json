@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Camisa Ignífuga X-PRO",
+    "category": "Indumentaria Laboral",
+    "image": "./img/camisaignifuga.jpg",
+    "description": "Diseñada para la máxima protección en entornos de alto riesgo. Tejido ignífugo certificado que ofrece seguridad sin sacrificar la movilidad y el confort. Ideal para minería y sectores industriales.",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "colors": [
+      { "name": "Naranja", "hex": "#FF4500" },
+      { "name": "Azul Marino", "hex": "#001f3f" }
+    ],
+    "pricingTiers": [
+      { "range": "1-2", "price": 65000 },
+      { "range": "3-6", "price": 50000 },
+      { "range": "7-12", "price": 45000 }
+    ],
+    "discount": "20% OFF"
+  },
+  {
+    "id": 2,
+    "name": "Tricota Táctica VIGIA",
+    "category": "Fuerza de Seguridad",
+    "image": "./img/tricota.jpg",
+    "description": "Resistencia y funcionalidad para cada jornada. Confeccionada con tela anti-desgarro y múltiples bolsillos estratégicos para un acceso rápido y seguro al equipamiento.",
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": [
+      { "name": "Negro", "hex": "#000000" },
+      { "name": "Verde Oliva", "hex": "#556B2F" }
+    ],
+    "pricingTiers": [
+      { "range": "1-5", "price": 48000 },
+      { "range": "6-15", "price": 42000 },
+      { "range": "16+", "price": 38000 }
+    ],
+    "discount": null
+  },
+  {
+    "id": 3,
+    "name": "Guardapolvo Escolar Clásico",
+    "category": "Uniformes Escolares",
+    "image": "./img/uniformesescolares.png",
+    "description": "El clásico guardapolvo blanco, reforzado con costuras dobles para resistir el día a día escolar. Tela de fácil planchado y alta durabilidad.",
+    "sizes": ["6", "8", "10", "12", "14", "16"],
+    "colors": [
+      { "name": "Blanco", "hex": "#FFFFFF" }
+    ],
+    "pricingTiers": [
+      { "range": "1-10", "price": 25000 },
+      { "range": "11-30", "price": 22000 },
+      { "range": "31+", "price": 19500 }
+    ],
+    "discount": "Vuelta al Cole"
+  },
+  {
+    "id": 4,
+    "name": "Casco de Seguridad Certificado",
+    "category": "Protección Personal (EPP)",
+    "image": "./img/epp.jpg",
+    "description": "Casco de alto impacto con arnés regulable para un ajuste perfecto y cómodo. Cumple con todas las normativas de seguridad vigentes para construcción y minería.",
+    "sizes": ["Único Regulable"],
+    "colors": [
+      { "name": "Amarillo", "hex": "#FFD700" },
+      { "name": "Blanco", "hex": "#FFFFFF" },
+      { "name": "Azul", "hex": "#007bff" }
+    ],
+    "pricingTiers": [
+      { "range": "1-20", "price": 18000 },
+      { "range": "21-50", "price": 16500 },
+      { "range": "51+", "price": 15000 }
+    ],
+    "discount": null
+  }
+]

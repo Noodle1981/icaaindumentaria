@@ -7,25 +7,20 @@ document.addEventListener('DOMContentLoaded', () => {
         initImpactCounters();
         handleInfiniteLogoScroller();
         handleSmoothScrolling();
-         initInteractiveStaff();
+        initInteractiveStaff();
+        handleContactModal();
+
     };
 
-    /**
-     * 1. EFECTO DE LA BARRA DE NAVEGACIÓN
-     * Cambia la apariencia del navbar al hacer scroll para mejorar la visibilidad.
-     * También cambia el logo de la versión blanca a la de color.
-     */
+    /** EFECTO DE LA BARRA DE NAVEGACIÓN **/
     const handleNavbarEffect = () => {
     const navbar = document.getElementById('main-navbar');
-    // Si no encuentra el navbar, no hacemos nada para evitar errores.
     if (!navbar) return;
 
     const logo = navbar.querySelector('.navbar-brand img');
-    // Si no encuentra la imagen del logo, tampoco hacemos nada.
+    
     if (!logo) return;
 
-    // --- LA CORRECCIÓN CLAVE ESTÁ AQUÍ ---
-    // Añadimos la ruta completa a la carpeta 'img'.
     const originalLogoSrc = './img/logoh.png'; 
     const scrolledLogoSrc = './img/logov.png'; 
 
@@ -33,34 +28,27 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.scrollY > 50) {
             if (!navbar.classList.contains('navbar-scrolled')) {
                 navbar.classList.add('navbar-scrolled');
-                logo.src = scrolledLogoSrc; // Ahora encontrará 'logov.png' dentro de la carpeta 'img'
+                logo.src = scrolledLogoSrc; 
             }
         } else {
             if (navbar.classList.contains('navbar-scrolled')) {
                 navbar.classList.remove('navbar-scrolled');
-                logo.src = originalLogoSrc; // Ahora encontrará 'logoh.png' dentro de la carpeta 'img'
+                logo.src = originalLogoSrc; 
             }
         }
     });
 };
-    /**
-     * 2. INICIALIZACIÓN DE ANIMACIONES AL HACER SCROLL (AOS)
-     * Usamos la librería Animate On Scroll (AOS) para animaciones de entrada elegantes y eficientes.
-     */
+    /** INICIALIZACIÓN DE ANIMACIONES AL HACER SCROLL **/
     const initAnimationsOnScroll = () => {
         AOS.init({
-            duration: 800,       // Duración de la animación
-            easing: 'ease-in-out', // Curva de animación
-            once: true,          // La animación ocurre solo una vez
-            offset: 50,          // Activa la animación un poco antes de que el elemento sea visible
+            duration: 800,       
+            easing: 'ease-in-out',
+            once: true,          
+            offset: 50,          
         });
     };
 
-    /**
-     * 3. CONTADORES DE IMPACTO ANIMADOS
-     * Utiliza la Intersection Observer API para activar la animación solo cuando
-     * los contadores son visibles, asegurando un rendimiento óptimo.
-     */
+    /** CONTADORES DE IMPACTO ANIMADOS **/
     const initImpactCounters = () => {
         const countersSection = document.getElementById('impact-counters');
         if (!countersSection) return;
@@ -68,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const animateCounter = (element) => {
             const target = +element.dataset.target;
             let current = 0;
-            const duration = 2000; // 2 segundos de animación
+            const duration = 2000; 
             const stepTime = Math.abs(Math.floor(duration / target));
             
             const timer = setInterval(() => {
@@ -84,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     document.querySelectorAll('.counter-number').forEach(animateCounter);
-                    observer.unobserve(entry.target); // Desconecta el observer después de animar
+                    observer.unobserve(entry.target); 
                 }
             });
         }, { threshold: 0.8 });
@@ -92,11 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(countersSection);
     };
 
-    /**
-     * 4. CARRUSEL DE LOGOS INFINITO Y DINÁMICO
-     * Clona los logos para crear un bucle perfecto y pausa la animación
-     * cuando el usuario pasa el cursor por encima.
-     */
+    /**. CARRUSEL DE LOGOS INFINITO Y DINÁMICO **/
     const handleInfiniteLogoScroller = () => {
         const scroller = document.querySelector('.logo-scroller-inner');
         if (!scroller) return;
@@ -119,10 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    /**
-     * 5. SCROLL SUAVE PARA LINKS DE ANCLAJE
-     * Mejora la navegación interna de la página.
-     */
+    /** SCROLL SUAVE PARA LINKS DE ANCLAJE **/
     const handleSmoothScrolling = () => {
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -142,7 +123,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
      const initInteractiveStaff = () => {
         const staffData = {
-            // Aquí centralizamos la información de cada miembro
             1: {
                 name: 'Nancy Heredia',
                 role: 'Fundadora y Directora',
@@ -178,11 +158,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const member = staffData[memberId];
             if (!member) return;
 
-            // Animación de salida
             displayContainer.style.opacity = '0';
 
             setTimeout(() => {
-                // Actualizar contenido
+
                 displayContainer.innerHTML = `
                     <img src="${member.image}" alt="Foto de ${member.name}" class="staff-display-image">
                     <div class="staff-display-info">
@@ -191,27 +170,55 @@ document.addEventListener('DOMContentLoaded', () => {
                         <p class="description">${member.description}</p>
                     </div>
                 `;
-                // Animación de entrada
-                displayContainer.style.opacity = '1';
-            }, 300); // Este tiempo debe coincidir con la transición de CSS
 
-            // Actualizar la clase 'active' en la botonera
+                displayContainer.style.opacity = '1';
+            }, 300);
+
+           
             selectorCards.forEach(card => {
                 card.classList.toggle('active', card.dataset.member === memberId);
             });
         }
 
-        // Cargar el primer miembro por defecto
+      
         updateDisplay('1');
 
-        // Añadir el evento de clic a cada tarjeta selectora
+      
         selectorCards.forEach(card => {
             card.addEventListener('click', () => {
                 updateDisplay(card.dataset.member);
             });
         });
     };
+        /** MODAL DE CONTACTO **/
+       const handleContactModal = () => {
+        const contactForm = document.getElementById('contact-form-modal');
+        if (!contactForm) return;
 
-    // Iniciar toda la aplicación
+        contactForm.addEventListener('submit', (event) => {
+            event.preventDefault(); 
+
+            const name = document.getElementById('contact-name').value;
+            const email = document.getElementById('contact-email').value;
+            const company = document.getElementById('contact-company').value;
+            const message = document.getElementById('contact-message').value;
+
+            // Validación simple
+            if (!name || !email || !message) {
+                alert('Por favor, completa todos los campos obligatorios (*).');
+                return;
+            }
+
+            const recipientEmail = 'contacto@icaa.com.ar'; // PONER EMAIL DE ELLA O DEL HOSTING
+            const subject = `Consulta desde la web de: ${company || name}`;
+            const body = `Hola, mi nombre es ${name}.\n\nEmpresa: ${company || 'No especificada'}\nEmail de contacto: ${email}\n\nMensaje:\n${message}`;
+
+            // Creamos y abrimos el link mailto:
+            const mailtoLink = `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoLink;
+        });
+    };
+
+
     initApp();
 });
